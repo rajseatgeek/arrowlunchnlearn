@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'io.arrow-kt:arrow-core:0.7.1'
+    implementation 'io.arrow-kt:arrow-syntax:0.7.1'
+    implementation 'io.arrow-kt:arrow-typeclasses:0.7.1'
+    implementation 'io.arrow-kt:arrow-data:0.7.1'
+    implementation 'io.arrow-kt:arrow-instances-core:0.7.1'
+    implementation 'io.arrow-kt:arrow-instances-data:0.7.1'
+    kapt 'io.arrow-kt:arrow-annotations-processor:0.7.1'
+
+    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
+    testImplementation 'junit:junit:4.12'
+}

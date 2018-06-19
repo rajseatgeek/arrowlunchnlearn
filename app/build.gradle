@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.example.raj.arrpg"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.16"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:0.16"
+
+    implementation "io.arrow-kt:arrow-effects:0.7.1"
+    implementation 'io.arrow-kt:arrow-core:0.7.1'
+    implementation 'io.arrow-kt:arrow-syntax:0.7.1'
+    implementation 'io.arrow-kt:arrow-typeclasses:0.7.1'
+    implementation 'io.arrow-kt:arrow-data:0.7.1'
+    implementation 'io.arrow-kt:arrow-instances-core:0.7.1'
+    implementation 'io.arrow-kt:arrow-instances-data:0.7.1'
+    kapt 'io.arrow-kt:arrow-annotations-processor:0.7.1'
+}
